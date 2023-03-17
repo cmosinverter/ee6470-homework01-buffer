@@ -68,9 +68,9 @@ include CMakeFiles/run.dir/progress.make
 
 CMakeFiles/run: out.bmp
 
-out.bmp: sobel
+out.bmp: filter
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/ee6470/hw1/Q2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating out.bmp"
-	./sobel ../lena_color_256_noise.bmp ./out.bmp
+	./filter ../mandril_color_noise.bmp ./out.bmp
 
 run: CMakeFiles/run
 run: out.bmp

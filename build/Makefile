@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sobel
+# Target rules for targets named filter
 
 # Build rule for target.
-sobel: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sobel
-.PHONY : sobel
+filter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 filter
+.PHONY : filter
 
 # fast build rule for target.
-sobel/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/build
-.PHONY : sobel/fast
+filter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/build
+.PHONY : filter/fast
 
 #=============================================================================
 # Target rules for targets named run
@@ -155,36 +155,36 @@ check/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/build
 .PHONY : check/fast
 
-SobelFilter.o: SobelFilter.cpp.o
-.PHONY : SobelFilter.o
+DoubleFilter.o: DoubleFilter.cpp.o
+.PHONY : DoubleFilter.o
 
 # target to build an object file
-SobelFilter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/SobelFilter.cpp.o
-.PHONY : SobelFilter.cpp.o
+DoubleFilter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/DoubleFilter.cpp.o
+.PHONY : DoubleFilter.cpp.o
 
-SobelFilter.i: SobelFilter.cpp.i
-.PHONY : SobelFilter.i
+DoubleFilter.i: DoubleFilter.cpp.i
+.PHONY : DoubleFilter.i
 
 # target to preprocess a source file
-SobelFilter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/SobelFilter.cpp.i
-.PHONY : SobelFilter.cpp.i
+DoubleFilter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/DoubleFilter.cpp.i
+.PHONY : DoubleFilter.cpp.i
 
-SobelFilter.s: SobelFilter.cpp.s
-.PHONY : SobelFilter.s
+DoubleFilter.s: DoubleFilter.cpp.s
+.PHONY : DoubleFilter.s
 
 # target to generate assembly for a file
-SobelFilter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/SobelFilter.cpp.s
-.PHONY : SobelFilter.cpp.s
+DoubleFilter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/DoubleFilter.cpp.s
+.PHONY : DoubleFilter.cpp.s
 
 Testbench.o: Testbench.cpp.o
 .PHONY : Testbench.o
 
 # target to build an object file
 Testbench.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/Testbench.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/Testbench.cpp.o
 .PHONY : Testbench.cpp.o
 
 Testbench.i: Testbench.cpp.i
@@ -192,7 +192,7 @@ Testbench.i: Testbench.cpp.i
 
 # target to preprocess a source file
 Testbench.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/Testbench.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/Testbench.cpp.i
 .PHONY : Testbench.cpp.i
 
 Testbench.s: Testbench.cpp.s
@@ -200,7 +200,7 @@ Testbench.s: Testbench.cpp.s
 
 # target to generate assembly for a file
 Testbench.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/Testbench.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/Testbench.cpp.s
 .PHONY : Testbench.cpp.s
 
 main.o: main.cpp.o
@@ -208,7 +208,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -216,7 +216,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -224,7 +224,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -237,10 +237,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... check"
 	@echo "... run"
-	@echo "... sobel"
-	@echo "... SobelFilter.o"
-	@echo "... SobelFilter.i"
-	@echo "... SobelFilter.s"
+	@echo "... filter"
+	@echo "... DoubleFilter.o"
+	@echo "... DoubleFilter.i"
+	@echo "... DoubleFilter.s"
 	@echo "... Testbench.o"
 	@echo "... Testbench.i"
 	@echo "... Testbench.s"

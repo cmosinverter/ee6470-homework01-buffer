@@ -5,7 +5,7 @@ using namespace std;
 // Wall Clock Time Measurement
 #include <sys/time.h>
 
-#include "SobelFilter.h"
+#include "DoubleFilter.h"
 #include "Testbench.h"
 
 // TIMEVAL STRUCT IS Defined ctime
@@ -24,7 +24,7 @@ int sc_main(int argc, char **argv) {
 
   //Create modules and signals
   Testbench tb("tb");
-  SobelFilter sobel_filter("sobel_filter");
+  DoubleFilter double_filter("double_filter");
   sc_clock clk("clk", CLOCK_PERIOD, SC_NS);
   sc_signal<bool> rst("rst");
 
@@ -40,8 +40,8 @@ int sc_main(int argc, char **argv) {
   //Connect FIFO channels with modules
   tb.i_clk(clk);
   tb.o_rst(rst);
-  sobel_filter.i_clk(clk);
-  sobel_filter.i_rst(rst);
+  double_filter.i_clk(clk);
+  double_filter.i_rst(rst);
   tb.o_r(r);
   tb.o_g(g);
   tb.o_b(b);
@@ -49,13 +49,13 @@ int sc_main(int argc, char **argv) {
   tb.i_g(f_g);
   tb.i_b(f_b);
   tb.o_col_check(col_check);
-  sobel_filter.i_r(r);
-  sobel_filter.i_g(g);
-  sobel_filter.i_b(b);
-  sobel_filter.o_r(f_r);
-  sobel_filter.o_g(f_g);
-  sobel_filter.o_b(f_b);
-  sobel_filter.i_col_check(col_check);
+  double_filter.i_r(r);
+  double_filter.i_g(g);
+  double_filter.i_b(b);
+  double_filter.o_r(f_r);
+  double_filter.o_g(f_g);
+  double_filter.o_b(f_b);
+  double_filter.i_col_check(col_check);
 
   tb.read_bmp(argv[1]);
   sc_start();

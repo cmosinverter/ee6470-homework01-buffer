@@ -51,6 +51,6 @@ private:
   unsigned char *source_bitmap;
   unsigned char *target_bitmap;
 
-  void do_sobel();
+  void do_filter();
 };
 #endif

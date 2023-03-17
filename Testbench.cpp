@@ -27,7 +27,7 @@ unsigned char header[54] = {
 
 Testbench::Testbench(sc_module_name n)
     : sc_module(n), output_rgb_raw_data_offset(54) {
-  SC_THREAD(do_sobel);
+  SC_THREAD(do_filter);
   sensitive << i_clk.pos();
   dont_initialize();
 }
@@ -120,7 +120,7 @@ int Testbench::write_bmp(string outfile_name) {
   return 0;
 }
 
-void Testbench::do_sobel() {
+void Testbench::do_filter() {
   int x, y, v, u;        // for loop counter
   unsigned char R, G, B; // color of R, G, B
   int adjustX, adjustY, xBound, yBound;
