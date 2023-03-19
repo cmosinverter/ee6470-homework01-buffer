@@ -70,7 +70,7 @@ CMakeFiles/run: out.bmp
 
 out.bmp: filter
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/ee6470/hw1/Q2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating out.bmp"
-	./filter ../mandril_color_noise.bmp ./out.bmp
+	./filter ../lena_color_256_noise.bmp ./out.bmp
 
 run: CMakeFiles/run
 run: out.bmp

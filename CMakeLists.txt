@@ -34,7 +34,7 @@ target_link_libraries(filter SystemC::systemc)
 # Add test  filter command
 set(OUT_FILE "out.bmp")
 add_custom_command(OUTPUT ${OUT_FILE}
-	COMMAND ./filter ../mandril_color_noise.bmp ./${OUT_FILE}
+	COMMAND ./filter ../lena_color_256_noise.bmp ./${OUT_FILE}
 	DEPENDS filter
 	WORKING_DIRECTORY ${CMAKE_BINARY_DIR}	
 )
