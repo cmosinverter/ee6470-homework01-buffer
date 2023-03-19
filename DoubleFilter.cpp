@@ -9,9 +9,6 @@ DoubleFilter::DoubleFilter(sc_module_name n) : sc_module(n) {
   reset_signal_is(i_rst, false);
 }
 
-
-
-
 void DoubleFilter::do_filter() {
 
   std::vector<int> reds, greens, blues;
@@ -83,7 +80,6 @@ void DoubleFilter::do_filter() {
     std::sort(greens.begin(), greens.end());
     std::sort(blues.begin(), blues.end());
     
-    
     // Mean filter
     for (auto x: reds) {
         sum_r += x;
@@ -97,12 +93,6 @@ void DoubleFilter::do_filter() {
     o_r.write(round((sum_r - center_r + 2 * reds[reds.size() / 2]) / 10));
     o_g.write(round((sum_g - center_g + 2 * greens[greens.size() / 2]) / 10));
     o_b.write(round((sum_b - center_b + 2 * blues[blues.size() / 2]) / 10));
-
-    // o_r.write(reds[reds.size() / 2]);
-    // o_g.write(greens[greens.size() / 2]);
-    // o_b.write(blues[blues.size() / 2]);
-
-
 
     wait(); //emulate module delay
   }
